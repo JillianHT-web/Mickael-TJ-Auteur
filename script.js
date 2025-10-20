@@ -1,25 +1,25 @@
-// Données des livres
+ // Données des livres
 const books = {
     1: {
         title: "Croire ou Penser",
         type: "Essai",
-        author: "Jean-Michel Thuillet",
+        author: "Mickael T.J.",
         description: "Description à compléter...",
-        releaseDate: "Disponible",
+        releaseDate: "Bientôt disponible",
         rating: 5,
         reviews: 0
     },
     2: {
         title: "Les Silences de la Terre",
         type: "Essai",
-        author: "Jean-Michel Thuillet",
+        author: "Mickael T.J.",
         description: "Description à compléter...",
-        releaseDate: "Disponible",
+        releaseDate: "Bientôt disponible",
         rating: 5,
         reviews: 0
     },
     3: {
-        title: "Titre du Roman",
+        title: "Les Chroniques de Kaelan Valois",
         type: "Roman",
         author: "Mickael TJ",
         description: "Description à compléter...",
