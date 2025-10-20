@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Croire ou Penser - Mickael TJ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>Mickael TJ</h1>
+                <p class="tagline">Auteur</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#accueil">Accueil</a></li>
+                <li><a href="index.html#livres">Livres</a></li>
+                <li><a href="index.html#auteur">À propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Book Details Section -->
+    <section class="book-details-section">
+        <div class="container">
+            <a href="index.html#livres" class="back-link">← Retour aux livres</a>
+            
+            <div class="book-details-container">
+                <!-- Couverture et infos principales -->
+                <div class="book-details-left">
+                    <div class="book-cover-large">
+                        <img src="croire-ou-penser.jpg" alt="Croire ou Penser">
+                    </div>
+                    
+                    <div class="book-meta">
+                        <h2>Croire ou Penser</h2>
+                        <p class="book-author-detail">Jean-Michel Thuillet</p>
+                        <p class="book-type-detail">Essai</p>
+                        
+                        <div class="book-rating-detail">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(0 avis)</span>
+                        </div>
+                        
+                        <div class="book-purchase">
+                            <h3>Acheter le livre</h3>
+                            <div class="purchase-links">
+                                <a href="#" class="btn btn-purchase" target="_blank">
+                                    <i class="fab fa-amazon"></i> Amazon
+                                </a>
+                                <a href="#" class="btn btn-purchase" target="_blank">
+                                    <i class="fas fa-book"></i> Autres libraires
+                                </a>
+                            </div>
+                            <p class="purchase-note">Les liens d'achat seront bientôt disponibles</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contenu détaillé -->
+                <div class="book-details-right">
+                    <div class="book-content">
+                        <h3>À propos de ce livre</h3>
+                        <p class="book-description">
+                            Description du livre à compléter...
+                        </p>
+                        
+                        <h3>Détails du livre</h3>
+                        <table class="book-info-table">
+                            <tr>
+                                <td><strong>Auteur</strong></td>
+                                <td>Jean-Michel Thuillet</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Genre</strong></td>
+                                <td>Essai</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Date de publication</strong></td>
+                                <td>À compléter</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nombre de pages</strong></td>
+                                <td>À compléter</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ISBN</strong></td>
+                                <td>À compléter</td>
+                            </tr>
+                        </table>
+                        
+                        <h3>Mots-clés</h3>
+                        <div class="book-tags">
+                            <span class="tag">À compléter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Commentaires Section -->
+            <section class="comments-section">
+                <h2>Avis et Commentaires</h2>
+                
+                <!-- Formulaire d'ajout de commentaire -->
+                <div class="add-comment-form">
+                    <h3>Laisser un avis</h3>
+                    <form id="commentForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rating">Note:</label>
+                            <div class="rating-input">
+                                <input type="radio" name="rating" value="5" id="star5">
+                                <label for="star5">★</label>
+                                <input type="radio" name="rating" value="4" id="star4">
+                                <label for="star4">★</label>
+                                <input type="radio" name="rating" value="3" id="star3">
+                                <label for="star3">★</label>
+                                <input type="radio" name="rating" value="2" id="star2">
+                                <label for="star2">★</label>
+                                <input type="radio" name="rating" value="1" id="star1">
+                                <label for="star1">★</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Votre avis..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Publier l'avis</button>
+                    </form>
+                </div>
+                
+                <!-- Liste des commentaires -->
+                <div class="comments-list" id="commentsList">
+                    <p class="no-comments">Aucun avis pour le moment. Soyez le premier à laisser un avis !</p>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mickael TJ - Auteur. Tous droits réservés.</p>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/mickaeltj" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mickael_tj/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="book-details.js"></script>
+</body>
+</html>
+

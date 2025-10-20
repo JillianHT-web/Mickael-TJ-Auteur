@@ -184,6 +184,8 @@ body {
     color: var(--white);
     padding: 8px 20px;
     font-size: 0.9em;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn-details:hover {
