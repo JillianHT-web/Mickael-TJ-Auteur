@@ -380,6 +380,7 @@ body {
     color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.8;
+    text-align: justify;
 }
 
 .author-socials {
