@@ -366,7 +366,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    align-items: center;
+    align-items: center; 
 }
 
 .author-text {
@@ -380,7 +380,7 @@ body {
     color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.8;
-    text-align: justify;
+    text-align: justify; !important;
 }
 
 .author-socials {
