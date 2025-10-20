@@ -3,86 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manus - Intelligence Artificielle</title>
+    <title>Mickael TJ - Auteur</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <h1>Manus</h1>
-            <p class="tagline">Une intelligence artificielle pour accomplir vos tâches</p>
-        </div>
-    </header>
-
-    <main>
-        <section class="intro">
-            <div class="container">
-                <h2>À propos de Manus</h2>
-                <p>Je suis Manus, une intelligence artificielle. Je suis là pour vous aider à accomplir une grande variété de tâches.</p>
+            <div class="nav-brand">
+                <h1>Mickael TJ</h1>
+                <p class="tagline">Auteur</p>
             </div>
-        </section>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#livres">Livres</a></li>
+                <li><a href="#auteur">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <section class="capabilities">
-            <div class="container">
-                <h2>Mes Capacités</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3>📊 Analyse de Données</h3>
-                        <p>Traiter, analyser et visualiser des données complexes pour vous fournir des insights pertinents.</p>
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h2>Allez plus que son imagination</h2>
+            <p>Découvrez les univers littéraires de Mickael TJ</p>
+            <a href="#livres" class="btn btn-primary">Explorer les livres</a>
+        </div>
+    </section>
+
+    <!-- Livres Section -->
+    <section id="livres" class="books-section">
+        <div class="container">
+            <h2>Mes Livres</h2>
+            
+            <!-- Filtres -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="essai">Essais</button>
+                <button class="filter-btn" data-filter="roman">Roman</button>
+            </div>
+
+            <!-- Galerie de livres -->
+            <div class="books-grid">
+                <!-- Livre 1: Croire ou penser -->
+                <div class="book-card" data-category="essai">
+                    <div class="book-cover">
+                        <img src="croire-ou-penser.jpg" alt="Croire ou penser">
+                        <div class="book-overlay">
+                            <button class="btn-details" onclick="openBookModal(1)">Détails</button>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>✍️ Rédaction</h3>
-                        <p>Créer des articles, rapports, documents professionnels et contenus de qualité.</p>
+                    <div class="book-info">
+                        <h3>Croire ou Penser</h3>
+                        <p class="book-type">Essai</p>
+                        <p class="book-author">Jean-Michel Thuillet</p>
+                        <div class="book-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(0 avis)</span>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>🌐 Développement Web</h3>
-                        <p>Construire des sites web, applications interactives et solutions logicielles pratiques.</p>
+                </div>
+
+                <!-- Livre 2: Les silences de la terre -->
+                <div class="book-card" data-category="essai">
+                    <div class="book-cover">
+                        <img src="les-silences-de-la-terre.jpg" alt="Les silences de la terre">
+                        <div class="book-overlay">
+                            <button class="btn-details" onclick="openBookModal(2)">Détails</button>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>🎨 Création Multimédia</h3>
-                        <p>Générer et éditer des images, vidéos, audio et contenu multimédia.</p>
+                    <div class="book-info">
+                        <h3>Les Silences de la Terre</h3>
+                        <p class="book-type">Essai</p>
+                        <p class="book-author">Jean-Michel Thuillet</p>
+                        <div class="book-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(0 avis)</span>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>🔍 Recherche Approfondie</h3>
-                        <p>Recueillir des informations, vérifier les faits et produire des documents complets.</p>
+                </div>
+
+                <!-- Livre 3: Roman (à venir) -->
+                <div class="book-card" data-category="roman">
+                    <div class="book-cover coming-soon">
+                        <div class="coming-soon-badge">À venir<br>2026</div>
+                        <div class="book-overlay">
+                            <button class="btn-details" onclick="openBookModal(3)">Détails</button>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>⚙️ Automatisation</h3>
-                        <p>Automatiser des workflows, gérer des tâches planifiées et exécuter des processus complexes.</p>
+                    <div class="book-info">
+                        <h3>Titre du Roman</h3>
+                        <p class="book-type">Roman</p>
+                        <p class="book-author">Mickael TJ</p>
+                        <p class="coming-soon-text">Sortie prévue début 2026</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="examples">
-            <div class="container">
-                <h2>Exemples de Tâches</h2>
-                <ul class="examples-list">
-                    <li>Résumé de l'actualité et des dernières nouvelles</li>
-                    <li>Création d'images et de contenu visuel</li>
-                    <li>Organisation et gestion d'agenda</li>
-                    <li>Développement de sites web et applications</li>
-                    <li>Analyse et visualisation de données</li>
-                    <li>Rédaction de rapports et documents professionnels</li>
-                    <li>Automatisation de workflows et processus</li>
-                    <li>Recherche et collecte d'informations</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="cta">
-            <div class="container">
-                <h2>Prêt à commencer ?</h2>
-                <p>Dites-moi ce que vous aimeriez accomplir et je ferai de mon mieux pour vous aider.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+    <!-- Auteur Section -->
+    <section id="auteur" class="author-section">
         <div class="container">
-            <p>&copy; 2025 Manus - Intelligence Artificielle. Tous droits réservés.</p>
+            <div class="author-content">
+                <div class="author-text">
+                    <h2>À Propos de l'Auteur</h2>
+                    <p class="author-bio">
+                        Biographie à compléter...
+                    </p>
+                    <div class="author-socials">
+                        <a href="https://www.facebook.com/mickaeltj" target="_blank" class="social-link">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                        <a href="https://www.instagram.com/mickael_tj/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Nous Contacter</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Votre email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Votre message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mickael TJ - Auteur. Tous droits réservés.</p>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/mickaeltj" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mickael_tj/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </footer>
+
+    <!-- Modal pour les détails des livres -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
 
