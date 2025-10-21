@@ -2,9 +2,9 @@
 // Vous devez créer un compte sur https://www.emailjs.com/
 // et remplacer ces valeurs par vos propres clés
 
-const EMAILJS_SERVICE_ID = 'default_service'; // À remplacer
-const EMAILJS_TEMPLATE_ID = 'template_newsletter'; // À remplacer
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // À remplacer
+const EMAILJS_SERVICE_ID = 'service_gcstnyc'; // À remplacer
+const EMAILJS_TEMPLATE_ID = 'template_7khxa5k'; // À remplacer
+const EMAILJS_PUBLIC_KEY = 'mkuQfsiOq-wvl2Z4_'; // À remplacer
 
 // Gestion de la newsletter
 document.addEventListener('DOMContentLoaded', function() {
