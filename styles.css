@@ -558,10 +558,12 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
 
 /* Style de l'image de l'auteur elle-même */
 .author-image img {
-    max-width: 100%; /* S'assure qu'elle ne dépasse pas les 33% alloués */
+    max-width: 100%; 
     height: auto;
+    max-height: 400px; /* NOUVEAU : Limite la hauteur maximale de l'image */
+    object-fit: contain; /* Ajouté pour s'assurer que l'image ne soit pas déformée */
     display: block;
-    border-radius: 10px; /* Ajout d'un petit arrondi */
+    border-radius: 10px;
     box-shadow: var(--shadow);
 }
 .author-section {
