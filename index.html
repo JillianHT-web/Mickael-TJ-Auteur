@@ -29,171 +29,178 @@
         </div>
     </nav>
 
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <h2>Allez plus que son imagination</h2>
-            <p>Découvrez les univers littéraires de Mickael TJ</p>
-            <a href="#livres" class="btn btn-primary">Explorer les livres</a>
-        </div>
-    </section>
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-content">
+                <h2>Allez plus que son imagination</h2>
+                <p>Découvrez les univers littéraires de Mickael TJ</p>
+                <a href="#livres" class="btn btn-primary">Explorer les livres</a>
+            </div>
+        </section>
 
-    <section class="featured-book-section">
-        <div class="container">
-            <div class="featured-book-container">
-                <div class="featured-book-image">
-                    <div class="coming-soon-badge-featured">À venir<br>Début 2026</div>
+        <section class="featured-book-section">
+            <div class="container">
+                <div class="featured-book-container">
+                    <div class="featured-book-image">
+                        <div class="coming-soon-badge-featured">À venir<br>Début 2026</div>
+                    </div>
+                    <div class="featured-book-content">
+                        <span class="featured-badge">✨ À venir</span>
+                        <h2>Les Chroniques de Kaelan Valois</h2>
+                        <h3>Tome 1 : L'Ombre des Ténèbres</h3>
+                        <p class="featured-tagline">« Et si la mort n'était qu'un début ? »</p>
+                        
+                        <p class="featured-description">
+                            Les Chroniques de Kaelan : « L'Ombre des Siècles » est une plongée envoûtante dans un monde de chevaliers, de magie et de destin inéluctable. L'histoire suit Sire Kaelan Valois, un guerrier las dont la vie prend un tournant radical après avoir été frappé par la foudre dans la mystérieuse Forêt Maudite. Doté d'une immortalité inattendue, Kaelan est jeté dans un tourbillon d'isolement et de questions existentielles. Au-delà des batailles, ce récit explore la quête de sens d'une vie qui ne finit jamais, le poids des secrets et la puissance d'une connexion inattendue. Accompagné d'Alaric, son ami et confident, Kaelan se lance dans un périple à travers des royaumes inconnus, cherchant des réponses à sa condition tout en découvrant que l'immortalité n'est peut-être pas une malédiction, mais une prophétie.
+                        </p>
+                        
+                        <div class="featured-actions">
+                            <a href="roman-details.html" class="btn btn-primary">
+                                <i class="fas fa-book"></i> Lire un extrait
+                            </a>
+                            <a href="roman-details.html" class="btn btn-secondary">
+                                <i class="fas fa-info-circle"></i> Plus de détails
+                            </a>
+                        </div>
+                        
+                        <div class="book-formats">
+                            <span class="format-badge"><i class="fas fa-book"></i> Livre papier</span>
+                            <span class="format-badge"><i class="fas fa-mobile-alt"></i> Ebook</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="featured-book-content">
-                    <span class="featured-badge">✨ À venir</span>
-                    <h2>Les Chroniques de Kaelan Valois</h2>
-                    <h3>Tome 1 : L'Ombre des Ténèbres</h3>
-                    <p class="featured-tagline">« Et si la mort n'était qu'un début ? »</p>
-                    
-                    <p class="featured-description">
-                        Les Chroniques de Kaelan : « L'Ombre des Siècles » est une plongée envoûtante dans un monde de chevaliers, de magie et de destin inéluctable. L'histoire suit Sire Kaelan Valois, un guerrier las dont la vie prend un tournant radical après avoir été frappé par la foudre dans la mystérieuse Forêt Maudite. Doté d'une immortalité inattendue, Kaelan est jeté dans un tourbillon d'isolement et de questions existentielles. Au-delà des batailles, ce récit explore la quête de sens d'une vie qui ne finit jamais, le poids des secrets et la puissance d'une connexion inattendue. Accompagné d'Alaric, son ami et confident, Kaelan se lance dans un périple à travers des royaumes inconnus, cherchant des réponses à sa condition tout en découvrant que l'immortalité n'est peut-être pas une malédiction, mais une prophétie.
+            </div>
+        </section>
+
+        <section id="livres" class="books-section">
+            <div class="container">
+                <h2>Tous les Livres</h2>
+                
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">Tous</button>
+                    <button class="filter-btn" data-filter="essai">Essais</button>
+                    <button class="filter-btn" data-filter="roman">Fantasy</button>
+                </div>
+
+                <div class="books-grid">
+
+                    <div class="book-card" data-category="essai">
+                        <div class="book-cover">
+                            <img src="croire-ou-penser.jpg" alt="Croire ou Penser">
+                            <div class="book-overlay">
+                                <div class="book-actions">
+                                    <a href="croire-ou-penser-details.html" class="btn-action">
+                                        <i class="fas fa-book"></i> Lire un extrait
+                                    </a>
+                                    <a href="croire-ou-penser-details.html" class="btn-action">
+                                        <i class="fas fa-shopping-cart"></i> Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3>Croire ou Penser</h3>
+                            <p class="book-type">Essai</p>
+                            <p class="book-author">Jean-Michel Thuillet</p>
+                            <div class="book-formats-small">
+                                <span class="format-small"><i class="fas fa-book"></i> Papier</span>
+                                <span class="format-small"><i class="fas fa-mobile-alt"></i> Ebook</span>
+                            </div>
+                            <div class="book-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(0 avis)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="book-card" data-category="essai">
+                        <div class="book-cover">
+                            <img src="les-silences-de-la-terre.jpg" alt="Les silences de la terre">
+                            <div class="book-overlay">
+                                <div class="book-actions">
+                                    <a href="les-silences-de-la-terre-details.html" class="btn-action">
+                                        <i class="fas fa-book"></i> Lire un extrait
+                                    </a>
+                                    <a href="les-silences-de-la-terre-details.html" class="btn-action">
+                                        <i class="fas fa-shopping-cart"></i> Acheter
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3>Les Silences de la Terre</h3>
+                            <p class="book-type">Essai</p>
+                            <p class="book-author">Jean-Michel Thuillet</p>
+                            <div class="book-formats-small">
+                                <span class="format-small"><i class="fas fa-book"></i> Papier</span>
+                                <span class="format-small"><i class="fas fa-mobile-alt"></i> Ebook</span>
+                            </div>
+                            <div class="book-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(0 avis)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="book-card" data-category="roman">
+                        <div class="book-cover coming-soon">
+                            <div class="coming-soon-badge">À venir<br>2026</div>
+                            <div class="book-overlay">
+                                <div class="book-actions">
+                                    <a href="roman-details.html" class="btn-action">
+                                        <i class="fas fa-book"></i> Lire un extrait
+                                    </a>
+                                    <a href="roman-details.html" class="btn-action">
+                                        <i class="fas fa-info-circle"></i> Plus d'infos
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3>Les Chroniques de Kaelan Valois</h3>
+                            <p class="book-subtitle">Tome 1 : L'Ombre des Ténèbres</p>
+                            <p class="book-type">Fantasy Épique</p>
+                            <p class="book-author">Mickael TJ</p>
+                            <div class="book-formats-small">
+                                <span class="format-small"><i class="fas fa-book"></i> Papier</span>
+                                <span class="format-small"><i class="fas fa-mobile-alt"></i> Ebook</span>
+                            </div>
+                            <p class="coming-soon-text">Sortie prévue début 2026</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content"> <h2>Recevez un Extrait Exclusif & Entrez à Valdoria !</h2>
+                    <p>
+                        Inscrivez-vous et recevez immédiatement **le premier chapitre gratuit** des 
+                        *Chroniques de Kaelan Valois : L'Ombre des Ténèbres*.
                     </p>
-                    
-                    <div class="featured-actions">
-                        <a href="roman-details.html" class="btn btn-primary">
-                            <i class="fas fa-book"></i> Lire un extrait
-                        </a>
-                        <a href="roman-details.html" class="btn btn-secondary">
-                            <i class="fas fa-info-circle"></i> Plus de détails
-                        </a>
-                    </div>
-                    
-                    <div class="book-formats">
-                        <span class="format-badge"><i class="fas fa-book"></i> Livre papier</span>
-                        <span class="format-badge"><i class="fas fa-mobile-alt"></i> Ebook</span>
-                    </div>
-                </div>
+                    <p>
+                        Découvrez les secrets derrière les **Lois Fondamentales de Valdoria** et suivez l'évolution du Royaume.
+                        <br>
+                        <em>Votre e-mail est en sécurité, pas de spam !</em>
+                    </p>
+                    <div class="ml-embedded" data-form="U8QQl9"></div> </div>
             </div>
-        </div>
-    </section>
-
-    <section id="livres" class="books-section">
-        <div class="container">
-            <h2>Tous les Livres</h2>
-            
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="essai">Essais</button>
-                <button class="filter-btn" data-filter="roman">Fantasy</button>
-            </div>
-
-            <div class="books-grid">
-
-                <div class="book-card" data-category="essai">
-                    <div class="book-cover">
-                        <img src="croire-ou-penser.jpg" alt="Croire ou Penser">
-                        <div class="book-overlay">
-                            <div class="book-actions">
-                                <a href="croire-ou-penser-details.html" class="btn-action">
-                                    <i class="fas fa-book"></i> Lire un extrait
-                                </a>
-                                <a href="croire-ou-penser-details.html" class="btn-action">
-                                    <i class="fas fa-shopping-cart"></i> Acheter
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="book-info">
-                        <h3>Croire ou Penser</h3>
-                        <p class="book-type">Essai</p>
-                        <p class="book-author">Jean-Michel Thuillet</p>
-                        <div class="book-formats-small">
-                            <span class="format-small"><i class="fas fa-book"></i> Papier</span>
-                            <span class="format-small"><i class="fas fa-mobile-alt"></i> Ebook</span>
-                        </div>
-                        <div class="book-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(0 avis)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="book-card" data-category="essai">
-                    <div class="book-cover">
-                        <img src="les-silences-de-la-terre.jpg" alt="Les silences de la terre">
-                        <div class="book-overlay">
-                            <div class="book-actions">
-                                <a href="les-silences-de-la-terre-details.html" class="btn-action">
-                                    <i class="fas fa-book"></i> Lire un extrait
-                                </a>
-                                <a href="les-silences-de-la-terre-details.html" class="btn-action">
-                                    <i class="fas fa-shopping-cart"></i> Acheter
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="book-info">
-                        <h3>Les Silences de la Terre</h3>
-                        <p class="book-type">Essai</p>
-                        <p class="book-author">Jean-Michel Thuillet</p>
-                        <div class="book-formats-small">
-                            <span class="format-small"><i class="fas fa-book"></i> Papier</span>
-                            <span class="format-small"><i class="fas fa-mobile-alt"></i> Ebook</span>
-                        </div>
-                        <div class="book-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="rating-count">(0 avis)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="book-card" data-category="roman">
-                    <div class="book-cover coming-soon">
-                        <div class="coming-soon-badge">À venir<br>2026</div>
-                        <div class="book-overlay">
-                            <div class="book-actions">
-                                <a href="roman-details.html" class="btn-action">
-                                    <i class="fas fa-book"></i> Lire un extrait
-                                </a>
-                                <a href="roman-details.html" class="btn-action">
-                                    <i class="fas fa-info-circle"></i> Plus d'infos
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="book-info">
-                        <h3>Les Chroniques de Kaelan Valois</h3>
-                        <p class="book-subtitle">Tome 1 : L'Ombre des Ténèbres</p>
-                        <p class="book-type">Fantasy Épique</p>
-                        <p class="book-author">Mickael TJ</p>
-                        <div class="book-formats-small">
-                            <span class="format-small"><i class="fas fa-book"></i> Papier</span>
-                            <span class="format-small"><i class="fas fa-mobile-alt"></i> Ebook</span>
-                        </div>
-                        <p class="coming-soon-text">Sortie prévue début 2026</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="newsletter">
-
-        <div class="newsletter-header">
-            <h2>Recevez un Extrait Exclusif & Entrez à Valdoria !</h2>
-            <p>
-                Inscrivez-vous et recevez immédiatement **le premier chapitre gratuit** des 
-                *Chroniques de Kaelan Valois : L'Ombre des Ténèbres*.
-            </p>
-            <p>
-                Découvrez les secrets derrière les **Lois Fondamentales de Valdoria** et suivez l'évolution du Royaume.
-                <br>
-                <em>Votre e-mail est en sécurité, pas de spam !</em>
-            </p>
-        </div>
-
-        <div class="ml-embedded" data-form="U8QQl9"></div>
         </section>
-    <section id="auteur">
+        
+        <section id="auteur" class="author-section">
+            <div class="container">
+                <h2>À propos de l'Auteur</h2>
+                </div>
         </section>
 
-    <section id="contact">
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contactez-moi</h2>
+                </div>
         </section>
+    </main>
 
     <footer>
         <div class="footer-content">
@@ -212,7 +219,9 @@
             </div>
         </div>
     </footer>
-<script src="script.js"></script> 
+
+    <script src="script.js"></script>
+    
     <script>
         (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
         .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
@@ -220,5 +229,6 @@
         (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
         ml('account', '1870469');
     </script>
-    </body>
+    
+</body>
 </html>
