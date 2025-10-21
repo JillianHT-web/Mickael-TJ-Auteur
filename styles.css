@@ -686,8 +686,11 @@ body {
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
 }
 
-/* Footer */
-.footer {
+/* =====================================================
+FOOTER CORRIGÉ ET MIS À JOUR 
+=====================================================
+*/
+footer { /* Cible l'élément <footer> (était .footer) */
     background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
     color: var(--white);
     text-align: center;
@@ -695,22 +698,50 @@ body {
     margin-top: 3rem;
 }
 
-.footer-socials {
+/* Style pour le contenu central (.footer-content) */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+.footer-content p {
+    margin: 8px 0; /* Espacement entre les lignes de texte */
+}
+
+/* Style des liens légaux */
+.footer-content a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: var(--secondary-color); /* Utilise votre couleur bleue pour le survol */
+    text-decoration: underline;
+}
+
+/* Social Links - Cible .social-links (était .footer-socials) */
+.social-links {
     margin-top: 1rem;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
-.footer-socials a {
+.social-links a {
     color: var(--white);
     font-size: 1.5em;
     transition: color 0.3s ease;
 }
 
-.footer-socials a:hover {
+.social-links a:hover {
     color: var(--secondary-color);
 }
+/* FIN DU FOOTER CORRIGÉ */
+
 
 /* Modal */
 .modal {
@@ -847,4 +878,3 @@ body {
         min-height: 300px;
     }
 }
-
