@@ -561,9 +561,9 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
 
 .author-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 3rem;
-    align-items: center; 
+    align-items: start; 
 }
 
 .author-text {
