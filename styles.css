@@ -103,7 +103,7 @@ body {
     z-index: 0; /* Place l'image de fond sous le contenu */
 
     /* NOUVELLE IMAGE DE FOND FLOUE ET ASSOMBRIE */
-    background-image: url('Couverture+4eme_gabarit.jpg'); 
+    background-image: url('image_fond.jpg'); 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
