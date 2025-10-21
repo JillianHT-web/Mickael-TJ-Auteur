@@ -1,3 +1,6 @@
+/* =====================================================
+RESET & VARIABLES GLOBALES
+===================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -33,7 +36,9 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
+/* =====================================================
+NAVIGATION
+===================================================== */
 .navbar {
     background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
     color: var(--white);
@@ -77,11 +82,13 @@ body {
     color: var(--secondary-color);
 }
 
-/* Hero Section */
+/* =====================================================
+HERO SECTION (ACCUEIL)
+===================================================== */
 .hero {
-    /* MIS À JOUR : Retrait du dégradé de couleur, l'arrière-plan sera géré par ::before */
+    /* Retrait du dégradé de couleur, l'arrière-plan est géré par ::before */
     background: none; 
-    background-attachment: fixed;
+    background-attachment: fixed; /* Maintient l'image fixe (effet parallaxe au scroll) */
     color: var(--white);
     padding: 120px 20px;
     text-align: center;
@@ -102,7 +109,7 @@ body {
     bottom: 0;
     z-index: 0; /* Place l'image de fond sous le contenu */
 
-    /* NOUVELLE IMAGE DE FOND FLOUE ET ASSOMBRIE */
+    /* Image de fond floue et assombrie */
     background-image: url('image1_fond.jpg'); 
     background-size: cover;
     background-position: center center;
@@ -113,8 +120,8 @@ body {
     transform: scale(1.05); /* Pour masquer les bords de l'effet de flou */
 
     pointer-events: none;
-    /* Laissez ou supprimez l'animation si vous ne la voulez plus: */
-    animation: floatBg 15s ease-in-out infinite; 
+    /* L'animation floatBg est COMMENTÉE pour supprimer le mouvement de "flottement" */
+    /* animation: floatBg 15s ease-in-out infinite; */ 
 }
 
 .hero::after {
@@ -131,11 +138,12 @@ body {
 }
 
 .hero-content {
-    /* MIS À JOUR : Ajout de position: relative et z-index pour s'assurer qu'il est au-dessus du fond */
+    /* Assure que le contenu est au-dessus du fond */
     position: relative; 
     z-index: 1; 
 }
 
+/* @keyframes floatBg n'est plus utilisé mais est conservé au cas où */
 @keyframes floatBg {
     0%, 100% {
         transform: translate(0, 0);
@@ -166,11 +174,9 @@ body {
     opacity: 0.95;
 }
 
-/* Suppression des anciennes règles interférentes */
-/* Suppression des règles .hero-background-image, .hero-background-image img */
-
-
-/* Buttons */
+/* =====================================================
+BOUTONS
+===================================================== */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -208,9 +214,8 @@ body {
 }
 
 /* =====================================================
-SECTION LIVRE EN VEDETTE (MISE À JOUR)
-=====================================================
-*/
+SECTION LIVRE EN VEDETTE
+===================================================== */
 .featured-book-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -228,14 +233,13 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
 }
 
 .featured-book-image {
-    /* Retiré le background et min-height de cette classe pour laisser l'image gérer */
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 500px;
     border-radius: 10px;
     position: relative;
-    overflow: hidden; /* Important pour les coins arrondis et la superposition */
+    overflow: hidden; 
 }
 
 /* Style de l'image de couverture */
@@ -249,7 +253,6 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
 
 /* Style du badge en superposition */
 .coming-soon-badge-featured {
-    /* 1. POSITIONNEMENT EN SUPERPOSITION */
     position: absolute;
     top: 0;
     left: 0;
@@ -257,25 +260,20 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
     bottom: 0;
     z-index: 10; 
     
-    /* 2. MISE EN FORME */
     display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
     
-    /* 3. LISIBILITÉ : Fond sombre semi-transparent */
     background-color: rgba(0, 0, 0, 0.5); 
     border-radius: 10px;
 
-    /* 4. STYLE DU TEXTE */
     text-align: center;
     color: var(--white);
     font-size: 2.5em;
     font-weight: bold;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.9); 
 }
-/* FIN DE LA MISE À JOUR */
-
 
 .featured-book-content h2 {
     font-size: 2.5em;
@@ -351,7 +349,9 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
     border: 1px solid var(--secondary-color);
 }
 
-/* Books Section */
+/* =====================================================
+BOOKS SECTION (GRILLE DE LIVRES)
+===================================================== */
 .books-section {
     padding: 80px 0;
     background-color: var(--white);
@@ -413,14 +413,15 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
     box-shadow: var(--shadow-hover);
 }
 
+/* CORRIGÉ : Définit la hauteur fixe du conteneur de l'image */
 .book-cover {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* **C'EST ÇA LA CLÉ !** */
-    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 400px; 
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+/* CORRIGÉ : L'image remplit le conteneur et est recadrée (object-fit: cover) */
 .book-cover img {
     width: 100%;
     height: 100%;
@@ -563,12 +564,14 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
     margin-top: 0.5rem;
 }
 
-/* Author Section */
+/* =====================================================
+AUTHOR SECTION
+===================================================== */
 /* Style du conteneur d'image pour centrer la photo */
 .author-image {
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
+    justify-content: center; 
+    align-items: center; 
     height: 100%;
 }
 
@@ -576,12 +579,13 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
 .author-image img {
     max-width: 100%; 
     height: auto;
-    max-height: 400px; /* NOUVEAU : Limite la hauteur maximale de l'image */
-    object-fit: contain; /* Ajouté pour s'assurer que l'image ne soit pas déformée */
+    max-height: 400px; 
+    object-fit: contain; 
     display: block;
     border-radius: 10px;
     box-shadow: var(--shadow);
 }
+
 .author-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -611,7 +615,6 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
     color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.8;
-    /* Correction du point-virgule manquant sur la ligne suivante */
     text-align: justify !important; 
 }
 
@@ -643,7 +646,9 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
     font-size: 1.2em;
 }
 
-/* Newsletter Section */
+/* =====================================================
+NEWSLETTER SECTION
+===================================================== */
 .newsletter-section {
     padding: 80px 0;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -712,7 +717,9 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
     font-style: italic;
 }
 
-/* Contact Section */
+/* =====================================================
+CONTACT SECTION
+===================================================== */
 .contact-section {
     padding: 80px 0;
     background-color: var(--white);
@@ -757,10 +764,9 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
 }
 
 /* =====================================================
-FOOTER CORRIGÉ ET MIS À JOUR 
-=====================================================
-*/
-footer { /* Cible l'élément <footer> (était .footer) */
+FOOTER
+===================================================== */
+footer { 
     background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
     color: var(--white);
     text-align: center;
@@ -778,7 +784,7 @@ footer { /* Cible l'élément <footer> (était .footer) */
 }
 
 .footer-content p {
-    margin: 8px 0; /* Espacement entre les lignes de texte */
+    margin: 8px 0; 
 }
 
 /* Style des liens légaux */
@@ -789,11 +795,11 @@ footer { /* Cible l'élément <footer> (était .footer) */
 }
 
 .footer-content a:hover {
-    color: var(--secondary-color); /* Utilise votre couleur bleue pour le survol */
+    color: var(--secondary-color); 
     text-decoration: underline;
 }
 
-/* Social Links - Cible .social-links (était .footer-socials) */
+/* Social Links */
 .social-links {
     margin-top: 1rem;
     display: flex;
@@ -810,10 +816,11 @@ footer { /* Cible l'élément <footer> (était .footer) */
 .social-links a:hover {
     color: var(--secondary-color);
 }
-/* FIN DU FOOTER CORRIGÉ */
 
 
-/* Modal */
+/* =====================================================
+MODAL & ANIMATIONS
+===================================================== */
 .modal {
     display: none;
     position: fixed;
@@ -877,7 +884,9 @@ footer { /* Cible l'élément <footer> (était .footer) */
     }
 }
 
-/* Responsive */
+/* =====================================================
+RESPONSIVE DESIGN (MEDIA QUERIES)
+===================================================== */
 @media (max-width: 768px) {
     .nav-menu {
         gap: 1rem;
