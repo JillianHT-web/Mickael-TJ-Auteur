@@ -548,6 +548,22 @@ SECTION LIVRE EN VEDETTE (MISE À JOUR)
 }
 
 /* Author Section */
+/* Style du conteneur d'image pour centrer la photo */
+.author-image {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100%;
+}
+
+/* Style de l'image de l'auteur elle-même */
+.author-image img {
+    max-width: 100%; /* S'assure qu'elle ne dépasse pas les 33% alloués */
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Ajout d'un petit arrondi */
+    box-shadow: var(--shadow);
+}
 .author-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
