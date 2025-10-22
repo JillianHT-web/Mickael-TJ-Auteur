@@ -104,12 +104,10 @@
             <section class="comments-section">
                 <h2>Avis et Commentaires</h2>
                 
-                <div id="statusMessage" style="margin-bottom: 20px;"></div> 
-                
                 <div class="add-comment-form">
                     <h3>Laisser un avis</h3>
                     
-                    <form id="reviewForm" method="POST" class="review-form">
+                    <form id="reviewForm" method="POST" action="http://mickael.tj.auteur.free.fr/process_review.php">
                         <div class="form-group">
                             <input type="text" placeholder="Votre nom" name="name" required> 
                         </div>
@@ -153,12 +151,12 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Script de gestion des messages de succès/erreur après la redirection
             const params = new URLSearchParams(window.location.search);
             const status = params.get('status');
             const message = params.get('message');
             const container = document.querySelector('.book-details-section .container');
             
-            // Logique d'affichage des messages de redirection (qui fonctionne bien)
             if (status === 'success') {
                 const alert = document.createElement('div');
                 alert.className = 'alert-success';
@@ -167,55 +165,12 @@
             } else if (status === 'error') {
                 const alert = document.createElement('div');
                 alert.className = 'alert-error';
-                // Assurez-vous que l'affichage est beau si l'erreur est "Champs manquants."
                 const displayMessage = decodeURIComponent(message || '').replace(/\+/g, ' '); 
                 alert.innerHTML = `<strong>Erreur !</strong> La soumission de votre avis a échoué. (${displayMessage})`;
                 container.prepend(alert);
             }
 
-            // ----------------------------------------------------------------------------------
-            // NOUVEAU SCRIPT JS : GESTION DE L'ENVOI AJAX POUR ÉVITER L'ALERTE DE SÉCURITÉ HTTP/HTTPS
-            // ----------------------------------------------------------------------------------
-            const form = document.getElementById('reviewForm');
-            const statusMessage = document.getElementById('statusMessage');
-            
-            // !!! REMPLACEZ VOTRE_IDENTIFIANT_FREE PAR VOTRE VRAI IDENTIFIANT !!!
-            const phpScriptUrl = 'http://mickael.tj.auteur.free.fr/process_review.php'; 
-            
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault(); // Stoppe l'envoi HTML standard
-
-                    // Affichage du message de chargement
-                    statusMessage.innerHTML = '<div class="alert-success">Envoi en cours... Veuillez patienter.</div>';
-                    statusMessage.style.display = 'block';
-
-                    const formData = new FormData(form);
-
-                    fetch(phpScriptUrl, {
-                        method: 'POST',
-                        body: formData 
-                    })
-                    .then(response => {
-                        // Si la requête Fetch réussit (pas d'erreur réseau), on suppose que le PHP a répondu.
-                        // On vérifie si la redirection a été lancée par le PHP (status 302)
-                        if (response.ok || response.status === 302) {
-                            
-                            // Affiche le message de succès car le PHP a probablement inséré les données
-                            statusMessage.innerHTML = '<div class="alert-success">Merci ! Votre avis a été soumis avec succès et sera publié après validation.</div>';
-                            form.reset(); // Vide le formulaire
-                        } else {
-                            // Erreur HTTP du serveur
-                            statusMessage.innerHTML = '<div class="alert-error">Erreur du serveur (' + response.status + '). Veuillez réessayer.</div>';
-                        }
-                    })
-                    .catch(error => {
-                        // Erreur réseau
-                        statusMessage.innerHTML = '<div class="alert-error">Erreur réseau : impossible de joindre le serveur PHP.</div>';
-                        console.error('Erreur:', error);
-                    });
-                });
-            }
+            // Le script de la section AJAX est complètement retiré.
         });
     </script>
 </body>
