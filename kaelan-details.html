@@ -173,5 +173,32 @@
             // Le script de la section AJAX est complètement retiré.
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const status = params.get('status');
+            const message = params.get('message');
+            const container = document.querySelector('.book-details-section .container');
+            
+            // Logique d'affichage des messages de redirection
+            if (status === 'success') {
+                const alert = document.createElement('div');
+                alert.className = 'alert-success';
+                alert.style.marginBottom = '20px'; // Ajout d'une petite marge
+                alert.innerHTML = '<strong>Merci !</strong> Votre avis a été soumis avec succès et l\'e-mail a été envoyé pour validation.';
+                container.prepend(alert);
+            } else if (status === 'error') {
+                const alert = document.createElement('div');
+                alert.className = 'alert-error';
+                alert.style.marginBottom = '20px';
+                // Assurez-vous que l'affichage est beau si l'erreur est "Champs manquants."
+                const displayMessage = decodeURIComponent(message || '').replace(/\+/g, ' '); 
+                alert.innerHTML = `<strong>Erreur !</strong> La soumission de votre avis a échoué. (${displayMessage})`;
+                container.prepend(alert);
+            }
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
