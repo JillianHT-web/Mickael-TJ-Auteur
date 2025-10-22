@@ -215,9 +215,23 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
-    min-height: 500px;
+    /* Nous allons mettre une hauteur fixe ou min-height moins rigide, ou la retirer */
+    min-height: 400px; /* 500px était trop grand et forçait la disproportion */
     border-radius: 10px;
     position: relative;
+    padding: 20px; /* Ajoute un peu de marge intérieure au conteneur */
+}
+
+/* NOUVELLE RÈGLE ESSENTIELLE POUR L'IMAGE */
+.featured-book-image img {
+    /* Ceci est la clé : l'image doit s'adapter au conteneur sans se déformer */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* S'assure que l'image entière est visible */
+    border-radius: 8px; /* Un petit arrondi sur l'image elle-même */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .coming-soon-badge-featured {
