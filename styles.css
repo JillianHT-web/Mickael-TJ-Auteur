@@ -528,7 +528,7 @@ body {
     margin-top: 0.5rem;
 }
 
-/* Author Section */
+/* --- Author Section --- */
 .author-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -538,13 +538,16 @@ body {
     font-size: 2.5em;
     margin-bottom: 2rem;
     color: var(--primary-color);
+    text-align: center; /* J'ajoute un text-align center pour le titre */
 }
 
 .author-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    align-items: center; 
+    align-items: center;
+    /* Ajoutez ou assurez-vous que ceci est là pour centrer le contenu en cas de grille à 1 colonne */
+    justify-items: center; 
 }
 
 .author-text {
@@ -564,6 +567,57 @@ body {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.social-link:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.social-link i {
+    font-size: 1.2em;
+}
+
+/* --- CORRECTION POUR L'IMAGE DE L'AUTEUR --- */
+.author-image {
+    flex-shrink: 0; /* Empêche l'image de rétrécir */
+    width: 100%; /* La largeur prendra celle définie par le grid-template-columns */
+    max-width: 300px; /* Limite la largeur maximale de l'image sur les grands écrans */
+    border-radius: 10px;
+    overflow: hidden; /* Important pour que l'image ne déborde pas du cadre arrondi */
+    box-shadow: var(--shadow); /* Ajoute une petite ombre au conteneur de l'image */
+}
+
+.author-image img {
+    width: 100%; /* L'image remplit la largeur de son conteneur (.author-image) */
+    height: auto; /* Maintient le ratio de l'image */
+    display: block; /* Supprime l'espace sous l'image */
+    border-radius: 10px; /* Applique le même arrondi que le conteneur si nécessaire */
+}
+
+/* Responsive pour l'image de l'auteur */
+@media (max-width: 768px) {
+    .author-content {
+        grid-template-columns: 1fr; /* Image et texte s'empilent */
+    }
+
+    .author-image {
+        margin: 2rem auto; /* Centre l'image quand elle est seule sur sa ligne */
+        max-width: 250px; /* Peut-être un peu plus petite sur mobile */
+    }
 }
 
 .social-link {
