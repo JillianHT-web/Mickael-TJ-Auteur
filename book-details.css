@@ -162,6 +162,7 @@
     color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 1rem;
+    text-align: justify;
 }
 
 .book-info-table {
@@ -302,6 +303,7 @@
 .comment-text {
     color: var(--text-light);
     line-height: 1.6;
+    text-align: justify;
 }
 
 .no-comments {

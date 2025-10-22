@@ -1,10 +1,7 @@
-// Configuration EmailJS (gratuit)
-// Vous devez créer un compte sur https://www.emailjs.com/
-// et remplacer ces valeurs par vos propres clés
-
-const EMAILJS_SERVICE_ID = 'default_service'; // À remplacer
-const EMAILJS_TEMPLATE_ID = 'template_newsletter'; // À remplacer
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // À remplacer
+// Configuration EmailJS
+const EMAILJS_SERVICE_ID = 'service_gcstnyc';
+const EMAILJS_TEMPLATE_ID = 'template_7khxa5k';
+const EMAILJS_PUBLIC_KEY = 'mkuQfsiOq-wvl2Z4_';
 
 // Gestion de la newsletter
 document.addEventListener('DOMContentLoaded', function() {
@@ -32,14 +29,14 @@ function handleNewsletterSubmit(form) {
     saveNewsletterSubscription(name, email);
 
     // Afficher un message de confirmation
-    const message = `Merci ${name} ! Vous êtes inscrit à la newsletter. Un email de confirmation a été envoyé à ${email}.`;
+    const message = 'Merci ' + name + ' ! Vous êtes inscrit à la newsletter. Un email de confirmation a été envoyé à ' + email + '.';
     alert(message);
 
     // Réinitialiser le formulaire
     form.reset();
 
-    // Optionnel: Envoyer un email via EmailJS (voir instructions ci-dessous)
-    // sendNewsletterEmail(name, email);
+    // Envoyer un email via EmailJS
+    sendNewsletterEmail(name, email);
 }
 
 function saveNewsletterSubscription(name, email) {
@@ -64,30 +61,39 @@ function saveNewsletterSubscription(name, email) {
     console.log('Total abonnés:', subscriptions.length);
 }
 
-// Fonction optionnelle pour envoyer un email via EmailJS
-// À utiliser si vous configurez EmailJS
+// Fonction pour envoyer un email via EmailJS
 function sendNewsletterEmail(name, email) {
-    // Charger la librairie EmailJS
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js';
-    script.onload = function() {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-        
-        const templateParams = {
-            to_email: email,
-            subscriber_name: name,
-            subscriber_email: email,
-            message: 'Bienvenue dans notre newsletter ! Vous allez recevoir bientôt un extrait exclusif des Chroniques de Kaelan Valois.'
+    // Charger la librairie EmailJS si elle n'est pas déjà chargée
+    if (typeof emailjs === 'undefined') {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js';
+        script.onload = function() {
+            initializeEmailJS(name, email);
         };
+        document.head.appendChild(script);
+    } else {
+        initializeEmailJS(name, email);
+    }
+}
 
-        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-            .then(function(response) {
-                console.log('Email envoyé avec succès', response.status, response.text);
-            }, function(error) {
-                console.log('Erreur lors de l\'envoi de l\'email', error);
-            });
+function initializeEmailJS(name, email) {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+    
+    const templateParams = {
+        to_email: email,
+        subscriber_name: name,
+        subscriber_email: email,
+        from_name: 'Mickael TJ - Auteur',
+        message: 'Bienvenue dans notre newsletter ! Vous allez recevoir bientôt un extrait exclusif des Chroniques de Kaelan Valois et des mises à jour sur nos nouveaux livres.'
     };
-    document.head.appendChild(script);
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+        .then(function(response) {
+            console.log('Email de confirmation envoyé avec succès', response.status, response.text);
+        }, function(error) {
+            console.log('Erreur lors de l\'envoi de l\'email', error);
+            // L'abonnement est quand même sauvegardé localement
+        });
 }
 
 // Fonction pour afficher les abonnés (à usage administrateur)
@@ -112,7 +118,7 @@ function exportSubscriptionsAsCSV() {
     let csv = 'Nom,Email,Date d\'inscription,Heure\n';
     
     data.forEach(sub => {
-        csv += `"${sub.name}","${sub.email}","${sub.date}","${sub.time}"\n`;
+        csv += '"' + sub.name + '","' + sub.email + '","' + sub.date + '","' + sub.time + '"\n';
     });
 
     // Créer un blob et télécharger
@@ -128,19 +134,4 @@ function exportSubscriptionsAsCSV() {
     link.click();
     document.body.removeChild(link);
 }
-
-// Instructions pour configurer EmailJS (optionnel)
-/*
-1. Créez un compte gratuit sur https://www.emailjs.com/
-2. Créez un service email (Gmail, Outlook, etc.)
-3. Créez un template d'email
-4. Remplacez les valeurs ci-dessus:
-   - EMAILJS_SERVICE_ID
-   - EMAILJS_TEMPLATE_ID
-   - EMAILJS_PUBLIC_KEY
-5. Décommentez la ligne sendNewsletterEmail() dans handleNewsletterSubmit()
-
-Pour l'instant, les emails sont sauvegardés localement dans le navigateur.
-Vous pouvez les exporter en CSV en tapant dans la console: exportSubscriptionsAsCSV()
-*/
 
