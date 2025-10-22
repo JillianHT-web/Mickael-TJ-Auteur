@@ -5,6 +5,7 @@
 }
 
 :root {
+    /* Variables existantes */
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
@@ -33,6 +34,10 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+
+/* ------------------------------------------------------------------- */
+/* ------------------- Navigation & Généralités ---------------------- */
+/* ------------------------------------------------------------------- */
 
 /* Navigation */
 .navbar {
@@ -193,6 +198,259 @@ body {
     background-color: #2980b9;
 }
 
+/* ------------------------------------------------------------------- */
+/* ---------------------- Page Détails du Livre ---------------------- */
+/* ------------------------------------------------------------------- */
+
+.book-details-section {
+    padding: 60px 0;
+    background-color: var(--light-bg); 
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+.book-details-container {
+    display: flex;
+    gap: 3rem;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* Partie gauche : Couverture et Meta */
+.book-details-left {
+    flex-shrink: 0;
+    width: 350px; 
+}
+
+.book-cover-large {
+    width: 100%;
+    height: auto;
+    max-height: 500px; 
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.book-cover-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    display: block;
+}
+
+.book-meta h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+.book-author-detail {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.book-type-detail {
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.book-rating-detail {
+    margin-bottom: 2rem;
+}
+
+.book-purchase h3 {
+    font-size: 1.3em;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--light-bg);
+    padding-bottom: 0.5rem;
+}
+
+.purchase-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-purchase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%; 
+}
+
+.btn-purchase.btn-paper {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+.btn-purchase.btn-paper:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Style spécifique Gumroad (eBook) */
+.btn-purchase.btn-gumroad {
+    background-color: #ff904e; 
+    color: var(--white);
+}
+.btn-purchase.btn-gumroad:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+}
+
+.purchase-note {
+    font-size: 0.9em;
+    color: var(--text-light);
+    font-style: italic;
+    text-align: center;
+}
+
+/* Partie droite : Description et détails */
+.book-details-right {
+    flex-grow: 1;
+}
+
+.book-content h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.book-description {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.book-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.book-info-table td {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-bg);
+}
+
+.book-info-table strong {
+    color: var(--primary-color);
+}
+
+.book-tags .tag {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* ------------------------------------------------------------------- */
+/* ----------------------- Section Commentaires ---------------------- */
+/* ------------------------------------------------------------------- */
+
+.comments-section {
+    padding: 60px 0;
+}
+
+.comments-section h2 {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.add-comment-form {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.add-comment-form h3 {
+    font-size: 1.5em;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Système de notation par étoiles */
+.rating-input {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.rating-input label {
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.rating-input input[type="radio"] {
+    display: none;
+}
+
+.rating-input input[type="radio"]:checked ~ label,
+.rating-input label:hover,
+.rating-input label:hover ~ label {
+    color: #f39c12; /* Couleur orange pour les étoiles */
+}
+
+/* Styles pour les messages de succès/erreur */
+.alert-success, .alert-error {
+    padding: 15px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ------------------------------------------------------------------- */
+/* --------------------- Sections de la Page d'Accueil ---------------- */
+/* ------------------------------------------------------------------- */
+
 /* Featured Book Section */
 .featured-book-section {
     padding: 80px 0;
@@ -215,22 +473,19 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%);
-    /* Nous allons mettre une hauteur fixe ou min-height moins rigide, ou la retirer */
-    min-height: 400px; /* 500px était trop grand et forçait la disproportion */
+    min-height: 400px; 
     border-radius: 10px;
     position: relative;
-    padding: 20px; /* Ajoute un peu de marge intérieure au conteneur */
+    padding: 20px; 
 }
 
-/* NOUVELLE RÈGLE ESSENTIELLE POUR L'IMAGE */
 .featured-book-image img {
-    /* Ceci est la clé : l'image doit s'adapter au conteneur sans se déformer */
     max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
-    object-fit: contain; /* S'assure que l'image entière est visible */
-    border-radius: 8px; /* Un petit arrondi sur l'image elle-même */
+    object-fit: contain; 
+    border-radius: 8px; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -538,7 +793,7 @@ body {
     font-size: 2.5em;
     margin-bottom: 2rem;
     color: var(--primary-color);
-    text-align: center; /* J'ajoute un text-align center pour le titre */
+    text-align: center; 
 }
 
 .author-content {
@@ -546,7 +801,6 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
-    /* Ajoutez ou assurez-vous que ceci est là pour centrer le contenu en cas de grille à 1 colonne */
     justify-items: center; 
 }
 
@@ -591,55 +845,20 @@ body {
     font-size: 1.2em;
 }
 
-/* --- CORRECTION POUR L'IMAGE DE L'AUTEUR --- */
 .author-image {
-    flex-shrink: 0; /* Empêche l'image de rétrécir */
-    width: 100%; /* La largeur prendra celle définie par le grid-template-columns */
-    max-width: 300px; /* Limite la largeur maximale de l'image sur les grands écrans */
+    flex-shrink: 0; 
+    width: 100%; 
+    max-width: 300px; 
     border-radius: 10px;
-    overflow: hidden; /* Important pour que l'image ne déborde pas du cadre arrondi */
-    box-shadow: var(--shadow); /* Ajoute une petite ombre au conteneur de l'image */
+    overflow: hidden; 
+    box-shadow: var(--shadow); 
 }
 
 .author-image img {
-    width: 100%; /* L'image remplit la largeur de son conteneur (.author-image) */
-    height: auto; /* Maintient le ratio de l'image */
-    display: block; /* Supprime l'espace sous l'image */
-    border-radius: 10px; /* Applique le même arrondi que le conteneur si nécessaire */
-}
-
-/* Responsive pour l'image de l'auteur */
-@media (max-width: 768px) {
-    .author-content {
-        grid-template-columns: 1fr; /* Image et texte s'empilent */
-    }
-
-    .author-image {
-        margin: 2rem auto; /* Centre l'image quand elle est seule sur sa ligne */
-        max-width: 250px; /* Peut-être un peu plus petite sur mobile */
-    }
-}
-
-.social-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 10px 20px;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
-
-.social-link:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-}
-
-.social-link i {
-    font-size: 1.2em;
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    border-radius: 10px; 
 }
 
 /* Newsletter Section */
@@ -845,7 +1064,27 @@ body {
     }
 }
 
-/* Responsive */
+/* ------------------------------------------------------------------- */
+/* -------------------------- Responsive ----------------------------- */
+/* ------------------------------------------------------------------- */
+
+/* Responsive Page Détails */
+@media (max-width: 992px) {
+    .book-details-container {
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .book-details-left {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .book-details-left .book-cover-large {
+        max-height: 400px;
+    }
+}
+
+/* Responsive Page Accueil */
 @media (max-width: 768px) {
     .nav-menu {
         gap: 1rem;
@@ -879,6 +1118,11 @@ body {
 
     .author-content {
         grid-template-columns: 1fr;
+    }
+
+    .author-image {
+        margin: 2rem auto; 
+        max-width: 250px; 
     }
 
     .books-section h2,
@@ -915,5 +1159,8 @@ body {
         padding: 60px 20px;
         min-height: 300px;
     }
+    
+    .rating-input label { /* Réajustement de la taille des étoiles sur très petits écrans */
+        font-size: 1.5em;
+    }
 }
-
