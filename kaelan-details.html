@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <form name="avis-livre" netlify hidden></form>
+
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -109,14 +111,40 @@
                     
                     <form name="avis-livre" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     
-    <p class="hidden">
-      <label>Ne pas remplir ceci : <input name="bot-field" /></label>
-    </p>
+                        <p style="display: none;">
+                          <label>Ne pas remplir ceci : <input name="bot-field" /></label>
+                        </p>
 
-    <input type="hidden" name="book_id" value="KaelanValois">
+                        <input type="hidden" name="book_id" value="KaelanValois">
 
-    <button type="submit" class="btn btn-primary">Soumettre l'avis</button>
-</form>
+                        <div class="form-group">
+                            <label for="name">Votre Nom :</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Votre Email :</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rating">Votre Note (sur 5 étoiles) :</label>
+                            <div class="rating-stars">
+                                <input type="radio" id="star5" name="rating" value="5" required><label for="star5" title="5 étoiles">★</label>
+                                <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 étoiles">★</label>
+                                <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 étoiles">★</label>
+                                <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 étoiles">★</label>
+                                <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 étoile">★</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Votre Avis/Commentaire :</label>
+                            <textarea id="comment" name="comment" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Soumettre l'avis</button>
+                    </form>
                 </div>
                 
                 <div class="comments-list" id="commentsList">
@@ -138,30 +166,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Script de gestion des messages de succès/erreur après la redirection
-            const params = new URLSearchParams(window.location.search);
-            const status = params.get('status');
-            const message = params.get('message');
-            const container = document.querySelector('.book-details-section .container');
-            
-            if (status === 'success') {
-                const alert = document.createElement('div');
-                alert.className = 'alert-success';
-                alert.innerHTML = '<strong>Merci !</strong> Votre avis a été soumis avec succès et sera publié après validation.';
-                container.prepend(alert);
-            } else if (status === 'error') {
-                const alert = document.createElement('div');
-                alert.className = 'alert-error';
-                const displayMessage = decodeURIComponent(message || '').replace(/\+/g, ' '); 
-                alert.innerHTML = `<strong>Erreur !</strong> La soumission de votre avis a échoué. (${displayMessage})`;
-                container.prepend(alert);
-            }
-
-            // Le script de la section AJAX est complètement retiré.
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const status = params.get('status');
             const message = params.get('message');
@@ -171,21 +175,18 @@
             if (status === 'success') {
                 const alert = document.createElement('div');
                 alert.className = 'alert-success';
-                alert.style.marginBottom = '20px'; // Ajout d'une petite marge
-                alert.innerHTML = '<strong>Merci !</strong> Votre avis a été soumis avec succès et l\'e-mail a été envoyé pour validation.';
+                alert.style.marginBottom = '20px'; 
+                alert.innerHTML = '<strong>Merci !</strong> Votre avis a été soumis avec succès et sera visible après validation.';
                 container.prepend(alert);
             } else if (status === 'error') {
                 const alert = document.createElement('div');
                 alert.className = 'alert-error';
                 alert.style.marginBottom = '20px';
-                // Assurez-vous que l'affichage est beau si l'erreur est "Champs manquants."
                 const displayMessage = decodeURIComponent(message || '').replace(/\+/g, ' '); 
                 alert.innerHTML = `<strong>Erreur !</strong> La soumission de votre avis a échoué. (${displayMessage})`;
                 container.prepend(alert);
             }
         });
     </script>
-</body>
-</html>
 </body>
 </html>
