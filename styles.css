@@ -403,28 +403,85 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Système de notation par étoiles */
-.rating-input {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+/* --- CORRECTIONS DU FORMULAIRE ET DES CHAMPS (Nouvelles règles) --- */
+
+.add-comment-form {
+    /* Ajout du style pour encadrer le formulaire */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    box-shadow: var(--shadow); /* Utilisation de la variable d'ombre existante */
 }
 
-.rating-input label {
-    font-size: 2em;
-    color: #ccc;
+.add-comment-form h3 {
+    /* Ajout d'une ligne de séparation sous le titre du formulaire */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: var(--primary-color); /* Mieux aligné avec le style général */
+}
+
+.form-group {
+    /* Correction de l'espacement pour réduire les espaces entre les champs */
+    margin-bottom: 15px; 
+}
+
+.form-group label {
+    /* Assure que le label est sur sa propre ligne */
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    /* Style pour les champs de saisie */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* --- STYLES SYSTÈME DE NOTATION (Étoiles) --- */
+
+/* L'ancienne règle '.rating-input' a été remplacée par celle-ci pour utiliser les classes du HTML */
+.rating-stars {
+    direction: rtl; /* Inverse l'ordre pour que 5 étoiles soit à gauche */
+    display: inline-block;
+    unicode-bidi: bidi-override; /* Nécessaire pour l'affichage RTL */
+}
+
+.rating-stars input[type="radio"] {
+    display: none; /* Cache les boutons radio standard */
+}
+
+.rating-stars label {
+    color: #ccc; /* Couleur de base (gris) */
+    font-size: 24px;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: color 0.2s;
+    margin: 0 1px; /* Réduit l'espacement entre les étoiles */
+    display: inline-block; /* Assure que les labels ne sont pas en block */
 }
 
-.rating-input input[type="radio"] {
-    display: none;
+.rating-stars label:hover,
+.rating-stars label:hover ~ label {
+    color: #f39c12; /* Couleur au survol */
 }
 
-.rating-input input[type="radio"]:checked ~ label,
-.rating-input label:hover,
-.rating-input label:hover ~ label {
-    color: #f39c12; /* Couleur orange pour les étoiles */
+.rating-stars input[type="radio"]:checked ~ label {
+    color: #f39c12; /* Couleur quand c'est sélectionné (orange) */
 }
 
 /* Styles pour les messages de succès/erreur */
@@ -952,23 +1009,25 @@ body {
     box-shadow: var(--shadow);
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+/* Les règles suivantes sont importantes pour tous les formulaires, donc je les modifie */
+/* pour éviter la redéfinition dans '.form-group' */
+.contact-form .form-group {
+    margin-bottom: 15px; /* Réduit l'espacement entre les groupes de champs */
 }
-
-.form-group input,
-.form-group textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #bdc3c7;
-    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* IMPORTANT: pour maintenir la taille du champ */
     font-family: inherit;
     font-size: 1em;
     transition: border-color 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
     border-color: var(--secondary-color);
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
@@ -1160,7 +1219,7 @@ body {
         min-height: 300px;
     }
     
-    .rating-input label { /* Réajustement de la taille des étoiles sur très petits écrans */
+    .rating-stars label { /* Utilisation de la nouvelle classe */
         font-size: 1.5em;
     }
 }
