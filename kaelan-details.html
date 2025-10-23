@@ -107,29 +107,16 @@
                 <div class="add-comment-form">
                     <h3>Laisser un avis</h3>
                     
-                    <form id="reviewForm" method="POST" action="http://mickael.tj.auteur.free.fr/process_review.php">
-                        <div class="form-group">
-                            <input type="text" placeholder="Votre nom" name="name" required> 
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Votre email" name="email" required> 
-                            <input type="hidden" name="book_id" value="KaelanValois">
-                        </div>
-                        <div class="form-group">
-                            <label for="rating">Note:</label>
-                            <div class="rating-input">
-                                <input type="radio" name="rating" value="5" id="star5" required><label for="star5">★</label>
-                                <input type="radio" name="rating" value="4" id="star4"><label for="star4">★</label>
-                                <input type="radio" name="rating" value="3" id="star3"><label for="star3">★</label>
-                                <input type="radio" name="rating" value="2" id="star2"><label for="star2">★</label>
-                                <input type="radio" name="rating" value="1" id="star1"><label for="star1">★</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Votre avis..." rows="5" name="comment" required></textarea> 
-                        </div>
-                        <button type="submit" class="btn btn-primary">Publier l'avis</button>
-                    </form>
+                    <form name="avis-livre" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    
+    <p class="hidden">
+      <label>Ne pas remplir ceci : <input name="bot-field" /></label>
+    </p>
+
+    <input type="hidden" name="book_id" value="KaelanValois">
+
+    <button type="submit" class="btn btn-primary">Soumettre l'avis</button>
+</form>
                 </div>
                 
                 <div class="comments-list" id="commentsList">
