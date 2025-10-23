@@ -1058,7 +1058,31 @@ body {
 .footer-socials a:hover {
     color: var(--secondary-color);
 }
+/* --- CORRECTION POUR LES LIENS DU FOOTER --- */
+/* Cela assure que les liens légaux sont blancs et bien visibles sur le fond foncé du footer */
+.footer-links {
+    margin: 1rem 0; /* Ajoute de l'espace au-dessus et au-dessous des liens légaux */
+}
 
+.footer a {
+    /* Force les liens (Mentions, CGV, etc.) à être blancs */
+    color: var(--white); 
+    text-decoration: none; /* Enlève le soulignement pour un look plus épuré */
+    transition: color 0.3s ease;
+    font-weight: 400; 
+}
+
+.footer a:hover {
+    /* Couleur de survol pour un meilleur feedback */
+    color: var(--secondary-color); /* Le bleu clair lors du survol */
+    text-decoration: underline; 
+}
+
+/* S'assure que le séparateur (|) est également blanc */
+.footer-links .separator {
+    color: var(--white);
+    margin: 0 0.5rem;
+}
 /* Modal */
 .modal {
     display: none;
